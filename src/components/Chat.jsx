@@ -175,6 +175,24 @@ const Chat = () => {
           Hey Sonny!!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
+
+        <p className="chat__message ">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In at
+          tempore ratione quaerat ex. Rerum dignissimos consequuntur quidem
+          illum porro eum quis rem at, adipisci vel tempore. Sapiente
+          cupiditate, unde magni corrupti officiis delectus nisi accusantium
+          temporibus accusamus praesentium excepturi.
+          <span className="chat__timestamp">3:52 PM</span>
+        </p>
+
+        <p className={`chat__message ${true && "chat__receiver"}`}>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In at
+          tempore ratione quaerat ex. Rerum dignissimos consequuntur quidem
+          illum porro eum quis rem at, adipisci vel tempore. Sapiente
+          cupiditate, unde magni corrupti officiis delectus nisi accusantium
+          temporibus accusamus praesentium excepturi.
+          <span className="chat__timestamp">3:52 PM</span>
+        </p>
       </div>
 
       <footer className="chat__footer">

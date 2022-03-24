@@ -1,5 +1,5 @@
 .sidebar {
-  flex-grow: 0.1;
+  flex: 0.3;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #d3d3d3;
@@ -54,12 +54,12 @@
   border: none;
   outline: none;
   margin-left: 10px;
-  flex-grow: 0.8;
+  flex: 0.8;
 }
 
 .sidebar__chats {
   background-color: #fff;
-  flex-grow: 1;
+  flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
 }
