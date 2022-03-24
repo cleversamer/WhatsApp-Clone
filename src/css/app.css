@@ -12,3 +12,10 @@
   height: 90vh;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 768px) {
+  .app__body {
+    width: 100vw;
+    height: 100vh;
+  }
+}
