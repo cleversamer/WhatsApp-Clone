@@ -1,5 +1,9 @@
 # WhatsApp 🚀
 
+## 🔴 Live Demo
+
+Not live yet...
+
 ## Description
 
 WhatsApp App Clone with React
@@ -9,6 +13,12 @@ WhatsApp App Clone with React
 ### Dependencies
 
 - React
+- React Router
+- React Context API
+- Redux
+- Firebase
+- MaterialUI
+- MaterialUI Icons
 
 ### Installing
 
@@ -20,7 +30,7 @@ WhatsApp App Clone with React
 
 ## Help
 
-- No problems detected yet
+- You may face an issue when installing dependencies, so write on the terminal `npm install --force` to avoid any errors.
 
 ## Authors
 
