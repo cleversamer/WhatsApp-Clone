@@ -1,26 +1,47 @@
-.login {
+.login,
+.login__body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.login > * {
+.login {
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.login__body > * {
   margin-bottom: 20px;
 }
 
 .login__image {
   width: 20vw;
   padding: 20px;
-  margin-top: -60px;
   opacity: 0.7;
 }
 
-.login > button {
+.login__body > button {
   font-size: 18px;
   color: #eee;
   background-color: red !important;
   text-transform: capitalize;
+  transition: transform 0.5s;
+}
+
+.login__body > button:active {
+  transform: scale(1.05) rotate(1440deg);
+}
+
+.login__rights {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.login__rights > a {
+  color: tomato;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 480px) {
