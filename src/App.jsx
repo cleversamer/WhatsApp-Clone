@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useStateValue } from "./components/StateProvider";
 import { Route, Switch } from "react-router-dom";
 
 import Login from "./components/Login";
@@ -8,7 +9,7 @@ import Chat from "./components/Chat";
 import "./css/app.css";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">
