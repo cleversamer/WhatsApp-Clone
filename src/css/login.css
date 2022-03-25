@@ -1,0 +1,42 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login > * {
+  margin-bottom: 20px;
+}
+
+.login__image {
+  width: 20vw;
+  padding: 20px;
+  margin-top: -60px;
+  opacity: 0.7;
+}
+
+.login > button {
+  font-size: 18px;
+  color: #eee;
+  background-color: red !important;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 480px) {
+  .login__image {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login__text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .login__text {
+    font-size: 12px;
+  }
+}
