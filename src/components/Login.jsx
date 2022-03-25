@@ -1,10 +1,16 @@
 import React from "react";
+import { auth, provider } from "../firebase";
 import { Button } from "@material-ui/core";
 
 import "../css/login.css";
 
 function Login() {
-  const handleSignIn = () => {};
+  const handleSignIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error.message));
+  };
 
   return (
     <div className="login">
