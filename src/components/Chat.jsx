@@ -47,12 +47,14 @@ const Chat = ({ user }) => {
 
     if (roomId) {
       db.collection("rooms").doc(roomId).collection("messages").add({
-        id: user.uid,
+        uid: user.uid,
         name: user.displayName,
         message,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
+
+    console.log(firebase.firestore.FieldValue.serverTimestamp());
 
     setMessage("");
   };
@@ -71,6 +73,7 @@ const Chat = ({ user }) => {
         minutes = "0" + minutes;
       }
       time = hour + ":" + minutes + meridiem;
+      console.log(timestamp);
       return time;
     } catch (ex) {
       return timestamp;
@@ -94,7 +97,14 @@ const Chat = ({ user }) => {
 
         <div className="chat__header-info">
           <h3>{roomName || "Unknown"}</h3>
-          <p>Last seen at 12:01 AM</p>
+          <p>
+            Last seen at{" "}
+            {parseTimestamp(
+              new Date(
+                messages[messages.length - 1]?.timestamp?.toDate()
+              ).toUTCString()
+            )}
+          </p>
         </div>
 
         <header className="chat__header-right">
@@ -117,7 +127,7 @@ const Chat = ({ user }) => {
           <p
             key={message.id}
             className={`chat__message chat ${
-              message.id === user.uid && "chat--receiver"
+              message.uid === user.uid && "chat--receiver"
             }`}
           >
             <span className="chat__name">{parseChatName(message.name)}</span>

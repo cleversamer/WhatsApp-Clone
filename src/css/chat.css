@@ -66,14 +66,9 @@
 }
 
 .chat__timestamp {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   font-size: 11px;
   color: #808080;
-}
-
-.chat--receiver > .chat__timestamp {
-  margin: 0;
-  margin-top: 3px;
 }
 
 .chat__footer {
