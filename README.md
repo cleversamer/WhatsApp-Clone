@@ -32,6 +32,12 @@ WhatsApp App Clone with React
 
 - You may face an issue when installing dependencies, so write on the terminal `npm install --force` to avoid any errors.
 
+## Bugs
+
+- Responsiveness bug:
+  - Responsive from 600px width screens and higher
+  - Not reponsive on mobiles, just on iPad, Tables, and Wider screens
+
 ## Authors
 
 - [Samer A.](https://twitter.com/ssadawi__)
