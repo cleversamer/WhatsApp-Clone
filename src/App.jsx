@@ -13,14 +13,17 @@ function App() {
 
   return (
     <div className="app">
-      {user ? (
+      {!user ? (
         <Login />
       ) : (
         <div className="app__body">
           <Sidebar />
 
           <Switch>
-            <Route path="/rooms/:roomId" component={Chat} />
+            <Route
+              path="/rooms/:roomId"
+              render={(props) => <Chat {...props} user={user} />}
+            />
             <Route path="/rooms" />
           </Switch>
         </div>

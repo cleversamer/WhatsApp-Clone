@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import firebase from "firebase";
 import db from "../firebase";
 import { Avatar, IconButton } from "@material-ui/core";
 import {
@@ -12,10 +13,11 @@ import {
 
 import "../css/chat.css";
 
-const Chat = () => {
+const Chat = ({ user }) => {
   const [seed, setSeed] = useState("");
   const [message, setMessage] = useState("");
   const [roomName, setRoomName] = useState("");
+  const [messages, setMessages] = useState([]);
   const { roomId } = useParams();
 
   useEffect(() => {
@@ -23,6 +25,16 @@ const Chat = () => {
       db.collection("rooms")
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+
+      db.collection("rooms")
+        .doc(roomId)
+        .collection("messages")
+        .orderBy("timestamp", "asc")
+        .onSnapshot((snapshot) => {
+          setMessages(
+            snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+          );
+        });
     }
   }, [roomId]);
 
@@ -32,7 +44,47 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
+
+    if (roomId) {
+      db.collection("rooms").doc(roomId).collection("messages").add({
+        id: user.uid,
+        name: user.displayName,
+        message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
+
     setMessage("");
+  };
+
+  const parseTimestamp = (timestamp) => {
+    try {
+      let time = timestamp.split(" ")[4];
+      time = time.split(":");
+      let hour = parseInt(time[0]);
+      let meridiem = "AM";
+      if (hour > 12) {
+        meridiem = "PM";
+      }
+      let minutes = parseInt(time[1]);
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      time = hour + ":" + minutes + meridiem;
+      return time;
+    } catch (ex) {
+      return timestamp;
+    }
+  };
+
+  const parseChatName = (name) => {
+    const result = name.split(" ")[0];
+    if (result.length > 8) {
+      const letters = result.split("");
+      return letters[0] + letters[1] + letters[2];
+    }
+
+    return result;
   };
 
   return (
@@ -61,105 +113,24 @@ const Chat = () => {
       </header>
 
       <div className="chat__body">
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
+        {messages.map((message) => (
+          <p
+            key={message.id}
+            className={`chat__message chat ${
+              message.id === user.uid && "chat--receiver"
+            }`}
+          >
+            <span className="chat__name">{parseChatName(message.name)}</span>
 
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
+            {message.message}
 
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad
-          reprehenderit autem quisquam delectus nesciunt? Dolorem, consequuntur.
-          Sunt perferendis harum incidunt.
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-          placeat corporis odit voluptatibus beatae? Laboriosam, debitis.
-          Architecto eaque at porro.
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message chat chat--receiver">
-          <span className="chat__name">Samer</span>
-          Hey Guys!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
+            <span className="chat__timestamp">
+              {parseTimestamp(
+                new Date(message.timestamp?.toDate()).toUTCString()
+              )}
+            </span>
+          </p>
+        ))}
       </div>
 
       <footer className="chat__footer">
