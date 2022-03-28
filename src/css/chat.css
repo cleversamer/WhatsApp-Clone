@@ -37,7 +37,7 @@
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   background-repeat: repeat;
   background-position: center;
-  padding: 10px 20px 0 20px;
+  padding: 20px 20px 0 20px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -50,25 +50,30 @@
   background-color: #fff;
   width: fit-content;
   max-width: 70%;
-  margin-bottom: 7px;
+  margin-bottom: 20px;
 }
 
-.chat__receiver {
+.chat--receiver {
   margin-left: auto;
   background-color: #dcf8c6;
 }
 
-/* .chat__message > .chat__name {
+.chat__message > .chat__name {
   position: absolute;
-  top: -20px;
+  top: -17px;
   font-weight: bold;
   font-size: 11px;
-} */
+}
 
 .chat__timestamp {
   margin-left: 10px;
   font-size: 11px;
   color: #808080;
+}
+
+.chat--receiver > .chat__timestamp {
+  margin: 0;
+  margin-top: 3px;
 }
 
 .chat__footer {

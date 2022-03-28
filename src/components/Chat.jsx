@@ -61,148 +61,103 @@ const Chat = () => {
       </header>
 
       <div className="chat__body">
-        {/* Old Message Body */}
-        {/* <p className="chat__message">
+        <p className="chat__message">
           <span className="chat__name">Samer</span>
           Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
-        </p> */}
+        </p>
 
-        <p className="chat__message ">
-          Hello, Samer
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          How it's going?
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          Hello, Samer
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          How it's going?
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          Hello, Samer
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          How it's going?
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          Hello, Samer
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          How it's going?
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad
+          reprehenderit autem quisquam delectus nesciunt? Dolorem, consequuntur.
+          Sunt perferendis harum incidunt.
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          Hello, Samer
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
+          placeat corporis odit voluptatibus beatae? Laboriosam, debitis.
+          Architecto eaque at porro.
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className="chat__message ">
-          How it's going?
+        <p className="chat__message">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
 
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          Hello, Samer
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          How it's going?
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          Hello, Samer
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          How it's going?
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          Hello, Samer
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          How it's going?
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Hey Sonny!!
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className="chat__message ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In at
-          tempore ratione quaerat ex. Rerum dignissimos consequuntur quidem
-          illum porro eum quis rem at, adipisci vel tempore. Sapiente
-          cupiditate, unde magni corrupti officiis delectus nisi accusantium
-          temporibus accusamus praesentium excepturi.
-          <span className="chat__timestamp">3:52 PM</span>
-        </p>
-
-        <p className={`chat__message ${true && "chat__receiver"}`}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. In at
-          tempore ratione quaerat ex. Rerum dignissimos consequuntur quidem
-          illum porro eum quis rem at, adipisci vel tempore. Sapiente
-          cupiditate, unde magni corrupti officiis delectus nisi accusantium
-          temporibus accusamus praesentium excepturi.
+        <p className="chat__message chat chat--receiver">
+          <span className="chat__name">Samer</span>
+          Hey Guys!
           <span className="chat__timestamp">3:52 PM</span>
         </p>
       </div>
