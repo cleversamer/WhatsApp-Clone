@@ -23,4 +23,5 @@
 .sidebar-chat__info > p {
   font-size: 14px;
   color: #808080;
+  flex: 0;
 }

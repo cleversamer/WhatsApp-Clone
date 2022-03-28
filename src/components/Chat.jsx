@@ -54,8 +54,6 @@ const Chat = ({ user }) => {
       });
     }
 
-    console.log(firebase.firestore.FieldValue.serverTimestamp());
-
     setMessage("");
   };
 
@@ -73,7 +71,6 @@ const Chat = ({ user }) => {
         minutes = "0" + minutes;
       }
       time = hour + ":" + minutes + meridiem;
-      console.log(timestamp);
       return time;
     } catch (ex) {
       return timestamp;

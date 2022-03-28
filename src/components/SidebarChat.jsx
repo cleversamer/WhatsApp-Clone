@@ -7,6 +7,21 @@ import "../css/sidebar-chat.css";
 
 function SidebarChat({ addNewChat, name, id }) {
   const [seed, setSeed] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    if (id) {
+      db.collection("rooms")
+        .doc(id)
+        .collection("messages")
+        .orderBy("timestamp", "asc")
+        .onSnapshot((snapshot) => {
+          setMessages(
+            snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+          );
+        });
+    }
+  });
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
@@ -25,7 +40,9 @@ function SidebarChat({ addNewChat, name, id }) {
         <div className="sidebar-chat__info">
           <h2>{name}</h2>
 
-          <p>Last message...</p>
+          <p>
+            {messages.length ? messages[messages.length - 1].message : "..."}
+          </p>
         </div>
       </div>
     </Link>
