@@ -2,7 +2,7 @@ repo_name: cleversamerr/WhatsApp-Clone
 report_id: 8258894b7edb97b93b6f7d2e05df92de
 version: 0.1
 repo_type: Public
-timestamp: '2023-12-24T12:39:45+00:00'
+timestamp: '2024-01-05T08:15:50+00:00'
 requested_by: cleversamerr
 provider: github
 branch: main
@@ -16,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/cleversamerr/WhatsApp-Clone
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -26,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/cleversamerr/WhatsApp-Clone
   detection_source: Repo Metadata
 - name: Material-UI
   description: Material UI is a library of React UI components that implements Google's
@@ -37,6 +39,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Front-End Frameworks
   image_url: https://img.stackshare.io/service/1904/default_44d81cb9fadbc3688b7e91a6d5217d0ea5358b57.png
+  detection_source_url: https://github.com/cleversamerr/WhatsApp-Clone/blob/main/package.json
   detection_source: package.json
   last_updated_by: Samer A
   last_updated_on: 2022-03-24 06:55:06.000000000 Z
@@ -76,6 +79,7 @@ tools:
   category: Application Hosting
   sub_category: Realtime Backend / API
   image_url: https://img.stackshare.io/service/116/cZLxNFZS.jpg
+  detection_source_url: https://github.com/cleversamerr/WhatsApp-Clone/blob/main/package.json
   detection_source: package.json
   last_updated_by: Samer A
   last_updated_on: 2022-03-25 07:16:38.000000000 Z
@@ -87,6 +91,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/cleversamerr/WhatsApp-Clone
   detection_source: Repo Metadata
 - name: npm
   description: The package manager for JavaScript.
@@ -96,6 +101,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/cleversamerr/WhatsApp-Clone/blob/main/package.json
   detection_source: package.json
   last_updated_by: Samer A
   last_updated_on: 2022-03-24 05:49:34.000000000 Z
